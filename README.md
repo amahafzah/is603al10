@@ -6,3 +6,4 @@ To run the FAQ project:
 2. cd into IS603al10 and run composer install
 3. CP .env.example to .env
 4. Setup database with sqlite or other
+# is603al10-Support-Ticket
