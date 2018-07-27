@@ -7,3 +7,4 @@ To run the FAQ project:
 3. CP .env.example to .env
 4. Setup database with sqlite or other
 # is603al10-Support-Ticket
+# is603al10-Support-Ticket
