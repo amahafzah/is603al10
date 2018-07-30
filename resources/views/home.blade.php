@@ -5,10 +5,23 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
+
+                    <!-- CSRF Token -->
+                    <meta name="csrf-token" content="{{ csrf_token() }}">
+
                     <div class="card-header">Questions
                         <a class="btn btn-primary float-right" href="{{route ('questions.create')}}">
                             Create a Question
                         </a>
+
+
+                        @if (Auth::user()->is_admin)
+                            <a class="btn btn-primary float-right" href="{{ url('admin/tickets') }}">Tickets</a>
+                        @else
+                            <a class="btn btn-primary float-right" href="{{ url('my_tickets') }}">My Tickets</a>
+
+                            <a class="btn btn-primary float-right" href="{{ url('new_ticket') }}">Open Ticket</a>
+                        @endif
 
                         <div class="card-body">
 

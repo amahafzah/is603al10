@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -34,8 +35,20 @@ Route::patch('/questions/{question_id}/answer/{answer_id}', 'AnswerController@up
 Route::delete('/questions/{question_id}/answer/{answer_id}', 'AnswerController@destroy')->name('answers.destroy');
 
 
+Route::get('/', 'HomeController@index');
+
 Route::get('new_ticket', 'TicketsController@create');
 Route::post('new_ticket', 'TicketsController@store');
+Route::get('tickets/{ticket_id}', 'TicketsController@show');
+Route::get('my_tickets', 'TicketsController@userTickets');
+
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function() {
+    Route::get('tickets', 'TicketsController@index');
+    Route::post('close_ticket/{ticket_id}', 'TicketsController@close');
+});
+
+Route::post('comment', 'CommentsController@postComment');
 
 Route::resources([
     'questions' => 'QuestionController',
