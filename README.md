@@ -11,7 +11,7 @@ To run the FAQ project:
 3. CP .env.example to .env
 4. Setup database with sqlite or other
 # is603al10-Support-Ticket
-# is603al10-Support-Ticket
+
 
 The main epic of this project will allow the user to initiate a technical support tikcet process. There are 4 user stories that are included in this epic. 
 
